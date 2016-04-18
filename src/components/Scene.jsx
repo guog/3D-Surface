@@ -1,26 +1,18 @@
 import THREE from 'three';
-import Grid from './Grid.jsx';
-import orbiter from 'three-orbit-controls';
-import Data from '../data.jsx';
+import Orbiter from 'three-orbit-controls';
 
 export default class Scene extends THREE.Scene {
     constructor(dom = document.body, options = {}) {
         super();
-        const width = Data.length;
-        const height = Data[0] && Data[0].length || 0;
-
-        this.wrapper = new THREE.Object3D();
-        this.wrapper.rotation.x -= Math.PI / 2;
-        this.wrapper.position.z += 1.5 * height - 1;
 
         this.setupRenderer(options);
         this.setupCamera(options);
         this.setupLight(options);
         this.setupOrbiter(options);
 
-        this.add(this.wrapper);
         this.add(new THREE.AxisHelper(500));
-        this.add(new Grid(Math.max(width, height), 0xd5d5d5).planes());
+        /* We need some grids */
+
 
         dom.appendChild(this.renderer.domElement);
     }
@@ -48,12 +40,9 @@ export default class Scene extends THREE.Scene {
     }
 
     setupOrbiter() {
-        this.orbiter = new (orbiter(THREE))(this.camera);
+        this.orbiter = new (Orbiter(THREE))(this.camera);
     }
 
-    /*
-     * TODO: Add custom drawer functions execution
-     * */
     animate() {
         const that = this;
         (function loop() {
