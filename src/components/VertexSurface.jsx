@@ -1,5 +1,4 @@
 import THREE from 'three';
-import FlipMaterials from './FlipMaterials.jsx';
 import Data from '../data.jsx';
 
 export default class VertexSurface {
@@ -31,9 +30,9 @@ export default class VertexSurface {
         surfaceGeometry.faces = this.makeFaces();
         surfaceGeometry.faceVertexUvs[0] = this.toFaceVertexUVs(surfaceGeometry.faces);
 
-        FlipMaterials.generateHeat(surfaceGeometry);
+     
 
-        return new THREE.Mesh(surfaceGeometry, new FlipMaterials(THREE.FlatShading));
+        return new THREE.Mesh(surfaceGeometry);
     }
 
     static makeVertices() {

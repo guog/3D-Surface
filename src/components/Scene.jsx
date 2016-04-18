@@ -1,5 +1,4 @@
 import THREE from 'three';
-import Grid from './Grid.jsx';
 import orbiter from 'three-orbit-controls';
 import Data from '../data.jsx';
 
@@ -20,7 +19,6 @@ export default class Scene extends THREE.Scene {
 
         this.add(this.wrapper);
         this.add(new THREE.AxisHelper(500));
-        this.add(new Grid(Math.max(width, height), 0xd5d5d5).planes());
 
         dom.appendChild(this.renderer.domElement);
     }
