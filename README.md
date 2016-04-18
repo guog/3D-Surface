@@ -1,4 +1,4 @@
-# 3D-Surface
+# 3D-Surface. Final
 
 A simple demo of 3D surface implementation based on 2D-array data set.
 Implemented both by vertices and by parametric function surfaces.
