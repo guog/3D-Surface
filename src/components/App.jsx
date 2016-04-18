@@ -4,7 +4,6 @@ import LeftNav from 'material-ui/lib/left-nav';
 import MenuItem from 'material-ui/lib/menus/menu-item';
 import Divider from 'material-ui/lib/divider';
 import Toggle from 'material-ui/lib/toggle';
-import ViewPort from './ViewPort.jsx';
 
 const styles = {
     toggle: {
@@ -44,7 +43,7 @@ export default class App extends React.Component {
                     <Divider />
                     <Toggle label="Heat map" toggled={isHeat} style={styles.toggle} onToggle={this.material}/>
                 </LeftNav>
-                <ViewPort type={isVertex} heat={isHeat}/>
+                /* Seems viewport must be here*/
             </section>
         );
     }
