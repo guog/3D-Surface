@@ -31,7 +31,7 @@ export default class VertexSurface {
         surfaceGeometry.faces = this.makeFaces();
         surfaceGeometry.faceVertexUvs[0] = this.toFaceVertexUVs(surfaceGeometry.faces);
 
-        FlipMaterials.generateHeat(surfaceGeometry);
+        //FlipMaterials.generateHeat(surfaceGeometry);
 
         return new THREE.Mesh(surfaceGeometry, new FlipMaterials(THREE.FlatShading));
     }
