@@ -1,0 +1,21 @@
+.project
+.classpath
+.settings
+.metadata
+target/
+bin/
+.springBeans
+MANIFEST.MF
+*.iml
+*.ipr
+*.iws
+.DS_Store
+.idea
+Makefile
+#
+# ignore build directories
+**/target/*
+
+# ignore nodejs modules
+**/node_modules/*
+
